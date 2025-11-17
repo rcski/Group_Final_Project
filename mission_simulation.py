@@ -25,6 +25,8 @@ def main():
         # ... edit here to add more commands
     ]
 
+    #Test
+
     # --- Task ---
     # Your task is to loop through the mission_commands, parse each one,
     # and then call the appropriate function from the imported subsystem scripts.
