@@ -7,12 +7,12 @@ This repository contains the starter code and resources for the SS1100 Final Pro
 
 The project is organized into folders, one for each spacecraft subsystem:
 
-- **/RCS/**: Reaction Control Subsystem
-- **/TCS/**: Thermal Control Subsystem
+- [x] **/RCS/**: Reaction Control Subsystem --> Completed
+- [x] **/TCS/**: Thermal Control Subsystem --> Completed
 - **/ADC/**: Attitude Control Subsystem (Note: ADC is used in the folder name for brevity)
-- **/C&DH/**: Command and Data Handling
+- [ ] **/C&DH/**: Command and Data Handling --> *WORKING*
 - **/EPS/**: Electrical Power Subsystem
-- **/Payload/**: Remote Sensing Payload
+- [ ] **/Payload/**: Remote Sensing Payload --> *WORKING*
 
 Each folder contains the necessary scripts and data files for that subsystem's tasks.
 
