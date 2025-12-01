@@ -1,7 +1,6 @@
 from command_dict import command_dict
 
 
-### NEW CODE ###
 # Helper function to get subsystem info by code instead of by name from the command_dict
 def get_subsystem_by_code(code):
     for full_name, info in command_dict.items():
@@ -9,21 +8,23 @@ def get_subsystem_by_code(code):
             return full_name, info
     return None, None
 
+
 def parse_command(command_string):
     """
     Parses a command string and returns a tuple with the full subsystem name,
     the command description, and the parameter value.
     """
-    
+
     # Segmentize the command strings into three parts
     segment = command_string.split(":")
-    
+
     '''
     #test print statements
     #print("Segment: ", segment)
     #print("Length of segment: ", len(segment))
     '''
     # perform a check to verify the format of the command string
+
 
     if len(segment) != 3:
         print("Error: Command format is incorrect. Expected format should be: Subsystem:Command:Parameter_Value")
@@ -33,10 +34,13 @@ def parse_command(command_string):
     subsystem_code = segment[0]
     command = segment[1]
     parameter_value = segment[2]
+
     '''
     #testers
     print("Subsystem TEST: ", subsystem)
     print("Command TEST: ", command) 
+    print("Parameter TEST: ", parameter_value)
+    print("Command TEST: ", command)
     print("Parameter TEST: ", parameter_value)
     '''
 
@@ -51,10 +55,15 @@ def parse_command(command_string):
     # Lookup subsystem by CODE instead of key by referencing the function above this section
     subsystem_name, subsystem_info = get_subsystem_by_code(subsystem_code)
 
+    # Lookup subsystem by CODE instead of key by referencing the function above this section
+    subsystem_name, subsystem_info = get_subsystem_by_code(subsystem_code)
     # If subsystem not found, return error, do this first before checking command
     if subsystem_info is None:
         print(f"Error: Subsystem code '{subsystem_code}' not found.")
         return (None, None, None)
+
+    # print subsystem found for testing for conformation/reference
+    print("Subsystem Found:", subsystem_name)
 
     # print subsystem found for testing for conformation/reference
     print("Subsystem Found:", subsystem_name)
@@ -69,24 +78,3 @@ def parse_command(command_string):
         return (None, None, None)
     # Return the full subsystem name, command description, and parameter value
     return (subsystem_name, command_description, value)
-
-def main():
-    """
-    Main function to test the command parser.
-    """
-    test_commands = [
-        "EPS:CMD01:0",
-        "ACS:CMD04:-1",
-        "RCS:INVALID:0"
-    ]
-
-    for cmd in test_commands:
-        subsystem, description, value = parse_command(cmd)
-        print(f"Command: {cmd}")
-        print(f" -> Subsystem: {subsystem}")
-        print(f" -> Description: {description}")
-        print(f" -> Value: {value}")
-        print("-" * 20)
-
-if __name__ == "__main__":
-    main()
