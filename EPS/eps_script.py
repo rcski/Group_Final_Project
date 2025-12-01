@@ -3,15 +3,25 @@ def available_power(voltage, current):
     Calculates the instantaneous incoming power from the solar panels,
     checking for inputs that exceed the solar panels' maximum limits.
     """
-    # YOUR CODE HERE
-    return 0
+    if voltage > 28:
+        print(f"Voltage of {voltage} W exceeds maximum limit of 28 W")
+        voltage_diff = voltage - 28
+        voltage = voltage - voltage_diff
+        print(f"Voltage being reduced to {voltage} W")
+    if current > 10:
+        print(f"Current of {current} A exceeds maximum current of 10 A")
+        current_diff = current - 10
+        current = current - current_diff
+        print(f"Current being reduced to {current} A")
+    power = voltage * current
+    return power
 
 def battery_charging(power_delivered, time_elapsed):
     """
     Calculates the total energy available for battery charging.
     """
-    # YOUR CODE HERE
-    return 0
+    energy_available = power_delivered * time_elapsed
+    return energy_available
 
 def main():
     """
