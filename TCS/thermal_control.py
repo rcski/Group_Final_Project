@@ -4,17 +4,29 @@ import matplotlib.pyplot as plt
 
 target_temp = random.randint(-30, 60)
 print(f"Your target temperature for this iteration is {target_temp}")
-############ DO NOT EDIT ABOVE THIS LINE ##############################
+#################################### DO NOT EDIT ABOVE THIS LINE ##########################################
 
 def process_temperature(input_temp, target_temp):
     """Function that takes an input temperature and target temperature
     applies a function to move it towards equilibrium.
     It should return a single float as the output indicating 
-    the new, altered temperature"""
-    return 0 # Delete this line and insert your code starting here!
+    the new, altered temperature."""
 
+    # Calculate the difference between the two input values.
+    temp_diff = target_temp - input_temp
 
-################### DO NOT EDIT BELOW THIS LINE ############################
+    # Modify the current temperature, changing it by no more than 25% of the total difference 
+    # between the current and target temperatures.
+    adjustment = temp_diff * 0.25
+    new_input_temp = input_temp + adjustment
+
+    # Print how much your TCS is changing the temperature by.
+    print(f"         TCS is changing the temperature by {adjustment:.2f}°C")
+    
+    # Return, as a float, the new current temperature.
+    return new_input_temp
+
+########################################### DO NOT EDIT BELOW THIS LINE #####################################
 def plot_results(time_steps, uncontrolled, controlled, target):
     plt.figure(figsize=(10, 6))
     plt.plot(time_steps, uncontrolled, label='Uncontrolled Temperature', linestyle='--')
@@ -56,4 +68,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-#########################################################################
+#############################################################################################################
