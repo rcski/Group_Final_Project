@@ -65,9 +65,6 @@ def parse_command(command_string):
     # print subsystem found for testing for conformation/reference
     print("Subsystem Found:", subsystem_name)
 
-    # print subsystem found for testing for conformation/reference
-    print("Subsystem Found:", subsystem_name)
-
     # Lookup command in the found subsystem (uppercase 'C' to match keys in command_dict))
     if command in subsystem_info["Commands"]:
         command_description = subsystem_info["Commands"][command][0] # NEED POINTER HERE, only wants the command... not the command andnext value
@@ -79,3 +76,24 @@ def parse_command(command_string):
     
     # Return the full subsystem name, command description, and parameter value
     return (subsystem_name, command_description, value)
+
+def main():
+    """
+    Main function to test the command parser.
+    """
+    test_commands = [
+        "EPS:CMD01:0",
+        "ACS:CMD04:-1",
+        "RCS:INVALID:0"
+    ]
+
+    for cmd in test_commands:
+        subsystem, description, value = parse_command(cmd)
+        print(f"Command: {cmd}")
+        print(f" -> Subsystem: {subsystem}")
+        print(f" -> Description: {description}")
+        print(f" -> Value: {value}")
+        print("-" * 20)
+
+if __name__ == "__main__":
+    main()
