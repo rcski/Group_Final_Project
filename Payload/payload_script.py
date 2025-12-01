@@ -16,7 +16,7 @@ def load_and_combine_bands(red_file, green_file, blue_file):
 
     if green.shape == blue.shape and green.shape == red.shape:  # check if the file shapes are the same size
         combined = np.dstack((red, green, blue))  # if they are stack them
-        combined = combined.astype(np.uint8)      # make type for plt.imshow
+        combined = combined.astype(np.uint8)     # make type for plt.imshow
         return combined
     else:
         print("CSV files must have the same shape")
@@ -24,9 +24,10 @@ def load_and_combine_bands(red_file, green_file, blue_file):
 
 
 
-def convert_radiance_to_reflectance(rgb_image, k=0.0008, b=0.1):
+def convert_radiance_to_reflectance(rgb_image, k=0.8, b=0.1):
     #Converts radiance values to reflectance.
-    reflectance_array = rgb_image * k + b
+    rgb_image = rgb_image.astype(np.float64)
+    reflectance_array = (rgb_image/255) * k + b
     return reflectance_array
 
 
