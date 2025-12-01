@@ -76,5 +76,6 @@ def parse_command(command_string):
         command_description = None
         print(f"Error: Command '{command}' does not exist in subsystem {subsystem_name}.")
         return (None, None, None)
+    
     # Return the full subsystem name, command description, and parameter value
     return (subsystem_name, command_description, value)
