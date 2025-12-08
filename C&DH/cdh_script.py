@@ -2,6 +2,7 @@ from command_dict import command_dict
 
 
 # Helper function to get subsystem info by code instead of by name from the command_dict
+# this is a restructured version of the original that was looking up by full name instead of code, GAI helped create this solution for us
 def get_subsystem_by_code(code):
     for full_name, info in command_dict.items():
         if info["Code"] == code:
