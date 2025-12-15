@@ -41,10 +41,13 @@ Once you have completed the tasks for all the individual subsystems, you can tac
 
 ## Questions for Writeup
 
-*Answer the following questions here, replacing this text with your group's responses.*
-
-1.  **What was your experience in collaborating?** Talk about what steps you used to ensure the inputs from group members worked - code testing, GitHub branch management, etc. - and how you divided up the workload for the project.
-2.  **What was the most challenging section, and why?** Feel free to provide more than one response if there is a difference of opinion in the group.
-3.  **If you employed Generative AI tools, how did you do so?** Discuss which tools you used, the prompts you utilized, how you ensured the results were valid, and how you integrated the code into your tasks.
-4.  **What other resources did you use to find solutions?** Online sites, books, references, etc.
+1.  **What was your experience in collaborating?**
+   Our team collaboration balanced structure with flexibility. We divided the workload by modules of the satellite system, first meeting the “check” criteria and then aiming for “check plus.” Tasks were also aligned with each member’s interests and willingness to challenge themselves. One member with stronger coding experience naturally took on the role of “chief editor,” guiding the team, refining code, and ensuring standards were met. We used GitHub to upload edits for peer review, which helped integrate contributions smoothly, though learning the buttonology and file paths was initially challenging. Regular check-ins kept everyone aligned and ensured our individual pieces fit together cohesively.
+2.  **What was the most challenging section, and why?**
+   Individually, the most challenging parts varied. One member struggled with the ISR payload code, particularly using np.dstack to combine RGB CSVs, which required extensive troubleshooting to understand the inputs and image construction. Another found difficulty in structuring the command dictionary correctly and ensuring the parser extracted the right fields. As a team, we anticipate challenges in integrating independently developed sections, since inconsistencies in logic flow and function structure may arise. Debugging these integration issues will require careful testing to ensure the program works end-to-end.
+3.  **If you employed Generative AI tools, how did you do so?**
+   We used generative AI tools such as ChatGPT primarily for troubleshooting and clarifying Python syntax. When encountering errors that were difficult to distill, we pasted code snippets and asked for explanations. This was especially helpful in understanding complex structures like the 3D arrays created by RGB images. We also described specific sections of code and our expectations, then adapted AI-generated suggestions and manually tested them to confirm validity. This iterative process made debugging more efficient and improved our understanding of the code.
+4.  **What other resources did you use to find solutions?**
+   Beyond AI tools, we relied on external resources to validate our approaches. Stack Overflow and the official Numpy documentation were used to confirm correct function usage, while lecture materials and YouTube tutorials provided broader explanations of programming concepts. These references helped ensure that the AI-generated outputs were accurate and that we understood the underlying principles behind the code.
 5.  **In what way could this project be improved for future quarters?**
+   This project overall was a lot of fun, and each subsystem had a unique feel and challenge. This tests each person to either feel like they can attempt a challenge to learn something new, or to stick with what they are comfortable with. 
