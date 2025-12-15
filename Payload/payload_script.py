@@ -10,13 +10,13 @@ def load_and_combine_bands(red_file, green_file, blue_file):
     #Loads the raw R, G, and B band data from CSV files, ensures they are of
     #the same dimensions, and combines them into a single RGB image.
 
-    green = np.loadtxt(green_file, delimiter=",", skiprows=1) [:,1:] # read file, and then skip the first row and column headers
-    blue = np.loadtxt(blue_file, delimiter=",", skiprows=1) [:,1:]
-    red = np.loadtxt(red_file, delimiter=",", skiprows=1) [:,1:]
+    green = np.loadtxt(green_file, delimiter=",") # read file, and then skip the first row and column headers
+    blue = np.loadtxt(blue_file, delimiter=",")
+    red = np.loadtxt(red_file, delimiter=",")
 
     if green.shape == blue.shape and green.shape == red.shape:  # check if the file shapes are the same size
         combined = np.dstack((red, green, blue))  # if they are stack them
-        combined = combined.astype(np.uint8)     # make type for plt.imshow
+          # make type for plt.imshow
         return combined
     else:
         print("CSV files must have the same shape")
@@ -26,8 +26,8 @@ def load_and_combine_bands(red_file, green_file, blue_file):
 
 def convert_radiance_to_reflectance(rgb_image, k=0.8, b=0.1):
     #Converts radiance values to reflectance.
-    rgb_image = rgb_image.astype(np.float64)
-    reflectance_array = (rgb_image/255) * k + b
+    rgb_image = rgb_image.astype(np.float64)    #convert to float to be able to create a ratio
+    reflectance_array = rgb_image * k + b #convert to ratio and then multiply by scalar and add additive factor
     return reflectance_array
 
 
