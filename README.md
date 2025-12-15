@@ -9,7 +9,7 @@ The project is organized into folders, one for each spacecraft subsystem:
 
 - :white_check_mark: **/RCS/**: Reaction Control Subsystem --> Completed
 - :white_check_mark: **/TCS/**: Thermal Control Subsystem --> Completed
-- :x: **/ADC/**: Attitude Control Subsystem (Note: ADC is used in the folder name for brevity) --> working
+- :white_check_mark: **/ADC/**: Attitude Control Subsystem (Note: ADC is used in the folder name for brevity) --> working
 - :white_check_mark: **/C&DH/**: Command and Data Handling --> Completed
 - :white_check_mark: **/EPS/**: Electrical Power Subsystem --> Completed
 - :white_check_mark: **/Payload/**: Remote Sensing Payload --> Completed
